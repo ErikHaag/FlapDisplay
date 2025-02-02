@@ -1,0 +1,19 @@
+.flapDisplay {
+    /* I'd recommend having these properties */
+    font-family: monospace;
+    white-space: preserve nowrap;
+    /* These are mainly aesthetics */
+    background-color: darkslategray;
+    border: 3px solid rgb(39, 35, 85);
+    border-radius: 3px;
+    color: white;
+    padding: 3px;
+    font-size: large;
+    font-weight: bold;
+    width: fit-content;
+}
+
+textarea {
+    width: 50ch;
+    height: 10em;
+}
