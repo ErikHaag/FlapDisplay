@@ -15,6 +15,12 @@ class flapDisplay {
         this.setGoal(element.innerText);
     }
 
+    forceDisplay(str) {
+        this.setGoal(str);
+        this.setCurrent(str);
+        this.updateElement();
+    }
+
     setCurrent(str) {
         this.current = str.split("\n").map((s) => Array.from(s.trimEnd()).map((c) => {
             if (c == " ") return -1n;
@@ -53,7 +59,7 @@ class flapDisplay {
         }
     }
 
-    update() {
+    updateCurrent() {
         let complete = true;
         //This is a rat's nest of if statements, I know.
         for (let i = 0; i < this.current.length; i++) {
@@ -100,6 +106,12 @@ class flapDisplay {
             this.current.pop();
         }
         //construct text
+        this.updateElement();
+        //return true when done
+        return complete;
+    }
+
+    updateElement() {
         let t = "";
         for (let i = 0; i < this.current.length; i++) {
             for (let j = 0; j < this.current[i].length; j++) {
@@ -118,7 +130,5 @@ class flapDisplay {
             t += "\n";
         }
         this.element.innerText = t.substring(0, t.length - 1);
-        //return true when done
-        return complete;
     }
 }

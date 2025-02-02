@@ -9,7 +9,7 @@ function startClock() {
     clock = setInterval(() => {
         //we don't want short circuiting too prevent everyone from running
         //so use an extra variable when multiple are active, like so:
-        let comp = flap.update();
+        let comp = flap.updateCurrent();
         // comp = flap2.update() && comp 
         if (comp) {
             //stop when finished
